@@ -26,18 +26,29 @@ namespace Dashboard
         {
             carName.Text = m_car.getName();
             speed.Text = m_car.getSpeed().ToString();
-            mpg.Text = m_car.getMPG().ToString();
-            gas.Text = m_car.gasLeft().ToString();
-            capacity.Text = m_car.getCapacity().ToString();
-            miles.Text = m_car.getMiles().ToString();
-            minTB.Text = "0";
-            galTB.Text = "0";
-            speedTB.Text = "0";
+            mpg.Text = m_car.getMPG().ToString("N2");
+            gas.Text = m_car.gasLeft().ToString("N2");
+            capacity.Text = m_car.getCapacity().ToString("N2");
+            miles.Text = m_car.getMiles().ToString("N2");
+            gasBar.Maximum = (int)m_car.getCapacity();
+            gasBar.Value = (int)m_car.gasLeft();
+            speedBar.Value = m_car.getSpeed();
+            if (m_car.gasLeft() < 2) { gasLight.Visible = true; }
+            else { gasLight.Visible = false; }
+            //minTB.Text = "0";
+            //galTB.Text = "0";
+            //speedTB.Text = "0";
         }
 
         private void newCar_Click(object sender, EventArgs e)
         {
-
+            NewCar c = new NewCar();
+            c.ShowDialog();
+            if (c.getCar() != null)
+            {
+                m_car = c.getCar();
+                UpdateForm();
+            }
         }
 
         private void driveB_Click(object sender, EventArgs e)
@@ -71,7 +82,10 @@ namespace Dashboard
         {
             try
             {
-                m_car.setSpeed(int.Parse(speedTB.Text));
+                int speed = int.Parse(speedTB.Text);
+                if (speed > 100) { speed = 100; }
+                if (speed < 0) { speed = 0; }
+                m_car.setSpeed(speed);
             }
             catch (FormatException)
             {

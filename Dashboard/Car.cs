@@ -23,16 +23,17 @@
 
         public double getCapacity() { return m_capacity; }
 
-        public void drive(int minutes)
+        public void drive(double minutes)
         {
-            double miles = ((double)minutes/60) * m_speed;
+            double miles = (minutes/60) * m_speed;
             double gas = miles / m_mpg;
             if (gas > m_gas)
             {
                 //System.Console.WriteLine((m_gas * m_mpg) / m_speed * 60);
-                drive((int)((m_gas * m_mpg) / m_speed * 60));
+                drive(((m_gas * m_mpg) / m_speed * 60));
             }
-            if (m_gas > 0) { m_gas -= gas; m_miles += miles; }
+            if ((int)m_gas > 0) { m_gas -= gas; m_miles += miles; }
+            else { m_gas = 0; }
             
         }
 

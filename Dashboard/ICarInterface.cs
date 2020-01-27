@@ -1,13 +1,13 @@
 ﻿namespace InterfacesStuff
 {
-    interface ICarInterface
+    public interface ICarInterface
     {
         string getName();
         void setName(string name);
         void setSpeed(int speed);
         int getSpeed();
         void setMPG(int mpg);
-        void drive(int minutes);
+        void drive(double minutes);
         void fill(int gals);
         double gasLeft();
         void setTankCapacity(int gals);

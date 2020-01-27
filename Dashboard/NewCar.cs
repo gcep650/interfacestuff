@@ -24,7 +24,7 @@ namespace Dashboard
             this.Close();
         }
 
-        private ICarInterface getCar() { return m_car; }
+        public ICarInterface getCar() { return m_car; }
 
         private void button1_Click(object sender, EventArgs e)
         {
