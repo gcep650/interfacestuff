@@ -27,12 +27,13 @@
         {
             double miles = (minutes/60) * m_speed;
             double gas = miles / m_mpg;
+            gas = (double)decimal.Round((decimal)gas, 4);
             if (gas > m_gas)
             {
                 //System.Console.WriteLine((m_gas * m_mpg) / m_speed * 60);
                 drive(((m_gas * m_mpg) / m_speed * 60));
             }
-            if ((int)m_gas > 0) { m_gas -= gas; m_miles += miles; }
+            if ((int)m_gas > 0) { m_gas -= gas; m_miles += miles; m_gas = (double)decimal.Round((decimal)m_gas, 4); }
             else { m_gas = 0; }
             
         }

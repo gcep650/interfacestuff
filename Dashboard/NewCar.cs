@@ -31,6 +31,8 @@ namespace Dashboard
             try
             {
                 m_car = new Car(double.Parse(capTB.Text), double.Parse(mpgTB.Text), nameTB.Text);
+                m_car.setSpeed(60);
+                m_car.fill((int)m_car.getCapacity());
             }
             catch (FormatException)
             {

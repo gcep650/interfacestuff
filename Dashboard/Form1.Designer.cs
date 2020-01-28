@@ -57,6 +57,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.speedBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gasBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gasLight)).BeginInit();
@@ -219,7 +222,7 @@
             this.driveB.Margin = new System.Windows.Forms.Padding(0);
             this.driveB.Name = "driveB";
             this.driveB.Size = new System.Drawing.Size(117, 30);
-            this.driveB.TabIndex = 15;
+            this.driveB.TabIndex = 0;
             this.driveB.Text = "Drive";
             this.driveB.UseVisualStyleBackColor = true;
             this.driveB.Click += new System.EventHandler(this.driveB_Click);
@@ -231,7 +234,7 @@
             this.minTB.Margin = new System.Windows.Forms.Padding(0);
             this.minTB.Name = "minTB";
             this.minTB.Size = new System.Drawing.Size(141, 29);
-            this.minTB.TabIndex = 16;
+            this.minTB.TabIndex = 1;
             this.minTB.Text = "0";
             this.minTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -253,7 +256,7 @@
             this.fillB.Margin = new System.Windows.Forms.Padding(0);
             this.fillB.Name = "fillB";
             this.fillB.Size = new System.Drawing.Size(117, 30);
-            this.fillB.TabIndex = 18;
+            this.fillB.TabIndex = 2;
             this.fillB.Text = "Fill Gas";
             this.fillB.UseVisualStyleBackColor = true;
             this.fillB.Click += new System.EventHandler(this.fillB_Click);
@@ -265,7 +268,7 @@
             this.galTB.Margin = new System.Windows.Forms.Padding(0);
             this.galTB.Name = "galTB";
             this.galTB.Size = new System.Drawing.Size(141, 29);
-            this.galTB.TabIndex = 19;
+            this.galTB.TabIndex = 3;
             this.galTB.Text = "0";
             this.galTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -287,7 +290,7 @@
             this.newCar.Margin = new System.Windows.Forms.Padding(0);
             this.newCar.Name = "newCar";
             this.newCar.Size = new System.Drawing.Size(258, 30);
-            this.newCar.TabIndex = 21;
+            this.newCar.TabIndex = 6;
             this.newCar.Text = "New Car";
             this.newCar.UseVisualStyleBackColor = true;
             this.newCar.Click += new System.EventHandler(this.newCar_Click);
@@ -298,7 +301,7 @@
             this.setSpeed.Margin = new System.Windows.Forms.Padding(0);
             this.setSpeed.Name = "setSpeed";
             this.setSpeed.Size = new System.Drawing.Size(117, 30);
-            this.setSpeed.TabIndex = 22;
+            this.setSpeed.TabIndex = 4;
             this.setSpeed.Text = "Set Speed";
             this.setSpeed.UseVisualStyleBackColor = true;
             this.setSpeed.Click += new System.EventHandler(this.setSpeed_Click);
@@ -310,7 +313,7 @@
             this.speedTB.Margin = new System.Windows.Forms.Padding(0);
             this.speedTB.Name = "speedTB";
             this.speedTB.Size = new System.Drawing.Size(141, 29);
-            this.speedTB.TabIndex = 23;
+            this.speedTB.TabIndex = 5;
             this.speedTB.Text = "0";
             this.speedTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -409,12 +412,48 @@
             this.label10.Text = "MPG";
             this.label10.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(385, 294);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(66, 21);
+            this.label12.TabIndex = 32;
+            this.label12.Text = "Minutes";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(385, 324);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(62, 21);
+            this.label15.TabIndex = 33;
+            this.label15.Text = "Gallons";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(385, 353);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(44, 21);
+            this.label16.TabIndex = 34;
+            this.label16.Text = "MPH";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(505, 432);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label10);
@@ -490,6 +529,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
     }
 }
 
